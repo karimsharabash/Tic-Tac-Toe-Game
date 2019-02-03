@@ -9,31 +9,35 @@ package clienttictactoe;
  *
  * @author Cross
  */
-public interface OtherClients {
-    	/*
+public class Clients implements OtherClients{
+    /*
 	 this method to get the name all the online users (form the server)
 	 and should be called once the client is connected 
 	 refreshed every one minute 
 	  onlineUsers is array defined in the class you will implement this interface in so you can use it 
 	  again to choose from thim later
-    recievse the an array and tokenize it with the comma in thread with sleep (10000);
+    getline();
 	*/
-	
-	public void getOnlineList(String[] onlineUsers );
-	
-	/*
+
+    @Override
+    public void getOnlineList(String[] onlineUsers) {
+      
+    }
+/*
 	 this method to send the user name of the chosen one to the server 
 	 you will need to use the array you have already stored the elements inside it 
 	 and the index of the chosen one 
-        println(uername:and userId)
-        accepted
-        
 	*/
-	public void sendRequestToUser(String[] onlineUsers,int indexOfChosenOne);	
-
+    @Override
+    public void sendRequestToUser(String[] onlineUsers, int indexOfChosenOne) {
+        
+    }
 	/*
 	 request recieved from the server(another client sent it to the server and choosed me ) and the client can accept or deny it 
-	Thread that works and listens the when a request is recieved 
-        */
-    public void recieveRequest();
+	*/
+    @Override
+    public void recieveRequest() {
+       
+    }
+    
 }
