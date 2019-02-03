@@ -32,14 +32,14 @@ import javafx.stage.Stage;
 public class ClientTicTacToe extends Thread implements connectableClient{
     
     
-String userName,password;
+String userName,Password;
   
     static Socket mySocket = null;
     static DataInputStream dis = null;
     static DataOutputStream dos = null;
     static PrintStream ps;
     Scanner scanner;
-    boolean status;
+    boolean status, S,l;
 
     @Override
     public boolean check() {
@@ -50,21 +50,44 @@ String userName,password;
 
     @Override
     public void sendPassward() {
-        
+        if(S==true){
+    try {
+        dos = new DataOutputStream(dos);
+        dos.writeBytes("S:"+Password);
+    } catch (IOException ex) {
+        Logger.getLogger(ClientTicTacToe.class.getName()).log(Level.SEVERE, null, ex);
     }
+        }else if (l==true)
+        {
+         try {
+                dos = new DataOutputStream(dos);
+                dos.writeBytes("L:"+Password);
+            } catch (IOException ex) {
+                Logger.getLogger(ClientTicTacToe.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }
+        
     @Override
     public void sendUserName ()
     {
        // dis   = new DataInputStream();
-        try {
-            dos = new DataOutputStream(mySocket.getOutputStream());
-            
-            
-        } catch (IOException ex){
+         if(S==true){
+    try {
+            dos = new DataOutputStream(dos);
+            dos.writeBytes("S:"+userName);
+        } catch (IOException ex) {
             Logger.getLogger(ClientTicTacToe.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        
+        }else if (l==true)
+        {
+         try {
+                dos = new DataOutputStream(dos);
+                dos.writeBytes("L:"+userName);
+            } catch (IOException ex) {
+                Logger.getLogger(ClientTicTacToe.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
     }
 
     public void start(Stage primaryStage) {
@@ -78,14 +101,23 @@ String userName,password;
             
             @Override
             public void handle(ActionEvent event) {
-                
+                l=true;
+                S=false;
                 userName=username.getText();
+                sendUserName ();
+                Password= password.getText();
+                sendPassward();
             }
         });
         regester.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-               userName=userName.password.getText();
+                S=true;
+                l=false;
+                userName=username.getText();
+                sendUserName ();
+                Password= password.getText();
+                sendPassward();
             }
         });
         StackPane root = new StackPane();
