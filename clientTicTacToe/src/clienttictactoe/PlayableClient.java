@@ -12,11 +12,13 @@ package clienttictactoe;
 public interface PlayableClient {
     	/*
 	send your move to the server 
+    println(playernanme ,cell number)
 	*/
 	public void sendYourMove(int newPosition);
 	
 	/*
-	get the player 2 move from the server to display it 
+	get the player 2 move from the server to display it
+        
 	*/
 	public int getPlayerTwoMove();
 	
