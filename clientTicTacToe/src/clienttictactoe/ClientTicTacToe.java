@@ -29,7 +29,7 @@ import javafx.stage.Stage;
  *
  * @author Cross
  */
-public class ClientTicTacToe extends Thread implements connectableClient,PlayableClient, OtherClients{
+public class ClientTicTacToe extends Thread implements connectableClient,PlayableClient{
     
     
 String userName,Password;
@@ -52,15 +52,21 @@ String userName,Password;
 
     @Override
     public boolean check() {
-        String check = dis.toString();
+    try {
+        String check = dis.readLine();
+        
         if(check=="done")
         {
-         status = true;
-         return status ;
+            status = true;
+            return status ;
         }else{
-         status = false;
-         return status ;
-       }
+            status = false;
+        }
+    } catch (IOException ex) {
+        Logger.getLogger(ClientTicTacToe.class.getName()).log(Level.SEVERE, null, ex);
+    }
+                return status ;
+
     }
 
     @Override
@@ -68,14 +74,14 @@ String userName,Password;
         if(S==true){
     try {
         
-        dos.writeBytes("S:"+Password);
+        dos.writeBytes("s:"+Password);
     } catch (IOException ex) {
         Logger.getLogger(ClientTicTacToe.class.getName()).log(Level.SEVERE, null, ex);
     }
         }else if (l==true)
         {
          try {
-                dos.writeBytes("L:"+Password);
+                dos.writeBytes("l:"+Password);
             } catch (IOException ex) {
                 Logger.getLogger(ClientTicTacToe.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -88,14 +94,14 @@ String userName,Password;
        // dis   = new DataInputStream();
          if(S==true){
     try {
-            dos.writeBytes("S:"+userName);
+            dos.writeBytes("s:"+userName);
         } catch (IOException ex) {
             Logger.getLogger(ClientTicTacToe.class.getName()).log(Level.SEVERE, null, ex);
         }
         }else if (l==true)
         {
          try {      
-                dos.writeBytes("L:"+userName);
+                dos.writeBytes("l:"+userName);
             } catch (IOException ex) {
                 Logger.getLogger(ClientTicTacToe.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -148,12 +154,23 @@ String userName,Password;
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        launch(args);
+        ClientTicTacToe C;
+        try {
+            C = new ClientTicTacToe();
+                    launch(args);
+
+        } catch (IOException ex) {
+            Logger.getLogger(ClientTicTacToe.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @Override
     public void sendYourMove(int newPosition) {
-    try {
+    //button number and send on the output stream with the flag (remoteMove)
+    String flag = new String("RemoteMove");
+        try {
+        dos.writeBytes(flag);
+        dos.flush();
         dos.write(newPosition);
     } catch (IOException ex) {
         Logger.getLogger(ClientTicTacToe.class.getName()).log(Level.SEVERE, null, ex);
@@ -168,47 +185,49 @@ String userName,Password;
     } catch (IOException ex) {
         Logger.getLogger(ClientTicTacToe.class.getName()).log(Level.SEVERE, null, ex);
     }
-       return playerMove;
+       return playerMove; // returns the player move to the array to set it ( please review setters for the game ( collaberate with yara and takwa ) 
     }
 
-    @Override
-    public void getOnlineList(String[] onlineUsers) {
-// a list starts with the word (start) that carries  
-
-
-     StringTokenizer user = new StringTokenizer(onlineUsers[0],",");
-        while (user.hasMoreTokens()) {  
-         System.out.println(user.nextToken());  
-     } 
-    }
-
-    @Override 
-    public void sendRequestToUser(String[] onlineUsers, int indexOfChosenOne) {
-       // onlineUsers[indexof]
-
-    }
-
-    @Override
-    public void recieveRequest() {
-
-    }
+}
+    
+    
+//    @Override
+//    public void getOnlineList(String[] onlineUsers // should be return type m ) {
+//// a list starts with the word (start) that carries  
+//
+//
+//     StringTokenizer user = new StringTokenizer(onlineUsers[0],",");
+//        while (user.hasMoreTokens()) {  
+//         System.out.println(user.nextToken());  
+//     } 
+//    }
+//
+//    @Override 
+//    public void sendRequestToUser(String[] onlineUsers, int indexOfChosenOne) {
+//       // onlineUsers[indexof]
+//
+//    }
+////
+////    @Override
+//    public void recieveRequest() {
+//
+//    }
 //    @Override   
 //    public void run()
 //    {
 //        recieveRequest();
 //    }
-    
-    static void printin(String Code) throws IOException //this function is to place a spesific string before the userName to let the server know what needs to be done from it's siden 
-    {
-    dos.writeChars(Code);
-    }
-     public static ArrayList<user> all() {
-        ArrayList<user> usersAL = new ArrayList<>();
-        //  ResultSet rs = DBM.get("SELECT * FROM user WHERE status = 1 AND id <> ? UNION SELECT * FROM user WHERE status = 0 AND id <> ?", ""+ Session.getAuth().getId(), ""+Session.getAuth().getId());
-        while (rs.next()) {
-            //      usersAL.add(new user(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getBoolean(5) ));
-        }
-        return usersAL;
-    }
-    
-}
+//    
+//    static void printin(String Code) throws IOException //this function is to place a spesific string before the userName to let the server know what needs to be done from it's siden 
+//    {
+//    dos.writeChars(Code);
+//    }
+//     public static ArrayList<user> all() {
+//        ArrayList<user> usersAL = new ArrayList<>();
+//        //  ResultSet rs = DBM.get("SELECT * FROM user WHERE status = 1 AND id <> ? UNION SELECT * FROM user WHERE status = 0 AND id <> ?", ""+ Session.getAuth().getId(), ""+Session.getAuth().getId());
+//        while (rs.next()) {
+//            //      usersAL.add(new user(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getBoolean(5) ));
+//        }
+//        return usersAL;
+//    }
+//    
