@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="371.0" prefWidth="585.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gameclientv.pkg1.LoginNamePageController">
+   <children>
+      <ImageView fitHeight="379.0" fitWidth="600.0" layoutX="-7.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@taqwa.jpeg" />
+         </image>
+      </ImageView>
+      <TextField fx:id="NameTxtField" layoutX="155.0" layoutY="116.0" prefHeight="25.0" prefWidth="222.0" promptText="Enter Your Name...">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="PassTxtField" accessibleRole="PASSWORD_FIELD" layoutX="155.0" layoutY="201.0" prefHeight="25.0" prefWidth="222.0" promptText="Enter Your Password...">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </TextField>
+      <Label layoutX="32.0" layoutY="110.0" prefHeight="30.0" prefWidth="109.0" text="Username" textFill="#ebdddd">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="32.0" layoutY="198.0" prefHeight="30.0" prefWidth="157.0" text="Password" textFill="#ebdddd">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="47.0" fitWidth="43.0" layoutX="7.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@back.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <Pane fx:id="SubmitPane" layoutX="332.0" layoutY="276.0">
+         <children>
+            <ImageView fitHeight="32.0" fitWidth="102.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@text-animation-1s-280x100px.gif" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane fx:id="ResetPane" layoutX="442.0" layoutY="274.0">
+         <children>
+            <ImageView fitHeight="52.0" fitWidth="102.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@reset.gif" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </children>
+      </Pane>
+      <ImageView fitHeight="50.0" fitWidth="133.0" layoutX="219.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@2.gif" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

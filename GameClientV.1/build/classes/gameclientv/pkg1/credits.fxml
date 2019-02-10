@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" opacity="0.94" prefHeight="247.0" prefWidth="326.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="324.0" fitWidth="497.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@taqwa.jpeg" />
+         </image>
+      </ImageView>
+      <Text fill="#c6b9b9" layoutX="12.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="This game is made by:                          1)Taqwa Nabil         2) Karim Goda                 3)Yara Mamdoh      4)Kerols saad                                                                   The game is played on a grid that's 3 squares by 3 squares.2. You are X or O, your friend (or the computer ) is the oppoite symbol. Players take turns putting their marks in empty squares.      The first player to get 3 of her marks in a row (up, down, across, or diagonally) is the winner.   When all 9 squares are full, the game is over. If no player has 3 marks in a row, the game ends in a tie." wrappingWidth="322.13671875">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="40.0" fitWidth="162.0" layoutX="160.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@credits.gif" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="close_btn" fitHeight="33.0" fitWidth="48.0" layoutX="450.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@close.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+   </children>
+</AnchorPane>
