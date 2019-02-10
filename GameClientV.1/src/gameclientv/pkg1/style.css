@@ -1,0 +1,52 @@
+#AnchorPane,#MainPaneSignIn,#SelectMode,#GameMode,#accordianPane{
+	-fx-background-image: url("taqwa.jpeg");
+	-fx-background-repeat: no-repeat;   	
+	-fx-background-size: cover;
+	-fx-background-position: center center;
+	-fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0); 
+}
+/*.gameButtons{
+	-fx-background-color: #e7d3bb;
+}
+.modeButtons{	
+	-fx-background-color: #7A5B3Ec4;
+	-fx-text-fill: white;
+	-fx-font-weight:bold;
+	-fx-font-size: 25px;
+	-fx-background-radius: 25px;
+	-fx-border-radius: 25px;
+	-fx-border-color:#000;
+}
+.modeButtons:hover {
+	-fx-effect: dropshadow(three-pass-box, #3f51b5c4, 30, 0.5, 0, 0); 
+}
+.signIn{
+	-fx-background-color:brown;
+	-fx-font-weight:bold;
+	-fx-text-fill: white;
+}
+.signIn:hover{
+	-fx-effect: dropshadow(three-pass-box, #a52a2ac4, 30, 0.5, 0, 0); 
+}
+.accordion .titled-pane .title {
+	-fx-background-color:#C1AB86 ;
+}
+.titled-pane 
+{
+	-fx-skin: "com.sun.javafx.scene.control.skin.TitledPaneSkin";    
+	-fx-text-fill: 	#1C1401;
+	-fx-font-size:15;
+}
+.tiltedpaneBackground{
+	-fx-background-color: #e7d3bb;
+}
+.connect{
+	-fx-background-color:#935528;
+	-fx-font-weight:bold;
+	-fx-text-fill: white;
+
+}
+.connect:hover{
+	-fx-effect: dropshadow(three-pass-box,#935528c4, 30, 0.5, 0, 0); 
+
+}*/

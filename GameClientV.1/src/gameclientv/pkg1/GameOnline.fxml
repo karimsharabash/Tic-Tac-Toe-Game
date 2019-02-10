@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fx:id="Player1Score" fitHeight="521.0" fitWidth="738.0" layoutX="-138.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images.jpg" />
+         </image>
+      </ImageView>
+      <Line endX="480.0" endY="130.49996948242188" layoutX="16.0" layoutY="10.0" startX="80.0" startY="130.49996948242188" stroke="#fff6f6" strokeWidth="5.0" />
+      <Line endX="203.0" endY="31.878679275512695" layoutX="26.0" layoutY="12.0" startX="203.0" startY="349.0" stroke="#fffefe" strokeWidth="5.0" />
+      <Line endX="486.0" endY="130.49996948242188" layoutX="15.0" layoutY="132.0" startX="79.0" startY="130.49996948242188" stroke="#fff6f6" strokeWidth="5.0" />
+      <Line endX="216.0" endY="31.0" layoutX="149.0" layoutY="9.0" startX="216.0" startY="356.0" stroke="#fffefe" strokeWidth="5.0" />
+      <Label fx:id="PlayerXLable" layoutX="98.0" layoutY="375.0" prefHeight="28.0" prefWidth="70.0" text="Player X" textFill="#e4e4e4">
+         <font>
+            <Font name="Bauhaus 93" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="PlayerOLable" layoutX="415.0" layoutY="376.0" prefHeight="28.0" prefWidth="70.0" text="Player 2" textFill="#e4e4e4">
+         <font>
+            <Font name="Bauhaus 93" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="TeiLable" layoutX="276.0" layoutY="377.0" prefHeight="28.0" prefWidth="48.0" text="Tie" textFill="#e4e4e4">
+         <font>
+            <Font name="Bauhaus 93" size="18.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="Back_pane" fitHeight="48.0" fitWidth="70.0" layoutX="3.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@back.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="RegionOne" fitHeight="96.0" fitWidth="130.0" layoutX="91.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="RegionFive" fitHeight="113.0" fitWidth="130.0" layoutX="233.0" layoutY="146.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="RegionFour" fitHeight="119.0" fitWidth="130.0" layoutX="98.0" layoutY="142.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="RegionTwo" fitHeight="96.0" fitWidth="130.0" layoutX="233.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="RegionThree" fitHeight="96.0" fitWidth="130.0" layoutX="367.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="RegionNine" fitHeight="96.0" fitWidth="130.0" layoutX="367.0" layoutY="264.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="RegionEight" fitHeight="96.0" fitWidth="130.0" layoutX="231.0" layoutY="264.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="RegionSix" fitHeight="113.0" fitWidth="130.0" layoutX="367.0" layoutY="146.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="RegionSeven" fitHeight="96.0" fitWidth="130.0" layoutX="98.0" layoutY="264.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="Player1Score" layoutX="119.0" layoutY="414.0" prefHeight="17.0" prefWidth="33.0" text="0" textFill="#fffdfd">
+         <font>
+            <Font name="System Italic" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="TieScore" layoutX="283.0" layoutY="416.0" prefHeight="28.0" prefWidth="33.0" text="0" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="Player2Score" layoutX="439.0" layoutY="417.0" text="0" textFill="#ebe3e3">
+         <font>
+            <Font name="Arial Italic" size="20.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
